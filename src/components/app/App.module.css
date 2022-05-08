@@ -1,0 +1,7 @@
+.app_wrapper {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-image: linear-gradient(to right top, #ff9671, #ff9278, #ff8e7f, #ff8b86, #ff888d, #fa838c, #f57d8b, #f0788a, #e56e81, #da6477, #d05a6e, #c55065);
+}
+    
