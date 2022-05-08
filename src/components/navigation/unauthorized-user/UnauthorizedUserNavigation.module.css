@@ -1,0 +1,28 @@
+.nav {
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav_right_block {
+    display: flex;
+    gap: 10px;
+}
+
+.btn_link {
+    display: inline-block;
+}
+
+.btn {
+    padding: 10px;
+    background-color: #fa838c;
+    border-radius: 5px;   
+}
+
+.logo {
+    width: 100px;
+    height: 40px;
+    background-color: #ff9278;
+    border-radius: 5px; 
+}
