@@ -8,8 +8,8 @@ export default function UnauthorizedUserNavigation() {
       <Link className={`${styles.btn_link} ${styles.logo}`} to="/" />
       <div className={styles.nav_right_block}>
         <SelectLanguageContainer />
-        <Link className={`${styles.btn_link} ${styles.btn}`} to="/login">
-          Log in
+        <Link className={`${styles.btn_link} ${styles.btn}`} to="/signin">
+          Sign in
         </Link>
         <Link className={`${styles.btn_link} ${styles.btn}`} to="/signup">
           Sign up
