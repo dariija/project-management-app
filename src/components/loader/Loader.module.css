@@ -1,0 +1,58 @@
+.loader {
+    position: relative;
+    width: 200px;
+    height: 200px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.blob_1,
+.blob_2,
+.blob_3 {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    border: 1px solid ;
+    border-color:  #f0788a;
+    border-radius: 54% 46% 53% 47% / 63% 70% 30% 37% ;
+
+    animation: spin 4s linear infinite;
+}
+
+.blob_1 {
+    border-radius: 36% 64% 51% 49% / 61% 64% 36% 39% ;
+}
+
+.blob_2 {
+    border-radius: 35% 65% 66% 34% / 41% 49% 51% 59% ;
+    animation-duration: 5s;
+}
+
+.blob_3 {
+    border-radius: 69% 31% 58% 42% / 63% 52% 48% 37% ;    
+    animation-direction: reverse;
+}
+
+.text {
+    text-transform: uppercase;
+    color: #d05a6e;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+
+}
