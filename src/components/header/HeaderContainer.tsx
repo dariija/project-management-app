@@ -1,9 +1,13 @@
 import { useEffect, useRef } from 'react';
+import { useAppSelector } from '../../store/hooks/hooks';
+import AuthorizedUserNavigation from '../navigation/authorized-user/AuthorizedUserNavigation';
+import Navigation from '../navigation/Navigation';
 import UnauthorizedUserNavigation from '../navigation/unauthorized-user/UnauthorizedUserNavigation';
 import { Header } from './Header';
 import styles from './Header.module.css';
 
 export default function HeaderContainer() {
+  const isAuth = useAppSelector((state) => state.user.isAuth);
   const headerEl = useRef<HTMLElement | null>(null);
   useEffect(() => {
     const scroll = function () {
@@ -19,7 +23,9 @@ export default function HeaderContainer() {
 
   return (
     <Header ref={headerEl}>
-      <UnauthorizedUserNavigation />
+      <Navigation>
+        {isAuth ? <AuthorizedUserNavigation /> : <UnauthorizedUserNavigation />}
+      </Navigation>
     </Header>
   );
 }

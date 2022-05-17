@@ -1,0 +1,20 @@
+.button {
+    width: 100%;
+    padding: 10px;
+
+    border: none;
+    border-radius: 5px;   
+    cursor: pointer;
+}
+
+.red {
+    background-color: #f15b5b;
+}
+
+.green {
+    background-color: rgb(151, 207, 146);
+}
+
+.gray {
+    background-color: gainsboro;
+}
