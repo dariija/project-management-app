@@ -6,14 +6,14 @@ import { API } from '../../utils/API';
 import { decodeJWTPayload } from '../../utils/JWTDecode';
 
 type UserAuth = {
-  isAuth: boolean;
+  isAuth: boolean | null;
   isLoading: boolean;
   error: string;
   user: User;
 };
 
 const initial: UserAuth = {
-  isAuth: false,
+  isAuth: null,
   isLoading: false,
   error: '',
   user: {
