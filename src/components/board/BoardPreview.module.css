@@ -1,0 +1,79 @@
+.board_link {
+    display: block;
+}
+
+.board {
+    display: flex;
+    flex-direction: row;
+    column-gap: 20px;
+    padding: 10px;
+
+    background-color: #f9f8f8;
+    border-radius: 8px;
+    box-shadow: rgb(0 0 0 / 10%) 0 0 10px;
+
+    transition: 0.2s linear;
+}
+
+.board:hover {
+    box-shadow: rgb(0 0 0 / 40%) 0 0 10px;
+    transform: scale(102%);
+}
+
+.board_img {
+    width: 100px;
+    height: auto;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: rgb(245, 197, 165);
+    background-size: 80%;
+}
+
+.board_info {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+
+    width: 280px;
+}
+
+.board_header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.buttons_group {
+    display: flex;
+    gap: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.edit_board,
+.delete_board {
+    width: 20px;
+    height: 20px;
+    padding: 0;
+    border: none;
+    z-index: 10;
+
+    cursor: pointer;
+    transition: 0.2s linear;
+}
+
+.edit_board:hover,
+.delete_board:hover {
+    transform: scale(120%);
+}
+
+.edit_board {
+    background: url('../../assets/svg/edit.svg') no-repeat center center;
+}
+.delete_board {
+    background: url('../../assets/svg/bin.svg') no-repeat center center;
+}
+
+.board_description {
+    font-size: 14px;
+    overflow-wrap: break-word;
+}
