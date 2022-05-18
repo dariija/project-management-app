@@ -18,3 +18,12 @@ export type SignupFormInput = {
   login: string;
   password: string;
 };
+
+export type BoardInfo = {
+  title: string;
+  description: string;
+};
+
+export type Board = {
+  id: string;
+} & BoardInfo;
