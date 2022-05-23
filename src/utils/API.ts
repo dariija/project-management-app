@@ -2,7 +2,7 @@ import axios, { AxiosRequestConfig } from 'axios';
 import { fetchSigninUser, signoutUser } from '../store/reducers/userSlice';
 import { store } from '../store/store';
 
-export const API_URL = 'https://project-management-app-76-new.herokuapp.com/';
+export const API_URL = 'https://project-management-app-76.herokuapp.com/';
 
 export const API = axios.create({
   baseURL: API_URL,

@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
 import axios from 'axios';
-import BoardService from '../../services/BoardsService';
+import BoardsService from '../../services/BoardsService';
 import { Board } from '../../types/types';
 
 type BoardsState = {
@@ -19,7 +19,29 @@ export const fetchAllBoards = createAsyncThunk(
   'boards/getAllBoards',
   async (_, { rejectWithValue }) => {
     try {
-      const { data } = await BoardService.getAllBoards();
+      const { data } = await BoardsService.getAllBoards();
+      return data;
+    } catch (error) {
+      if (axios.isAxiosError(error)) {
+        const { request, response } = error;
+        if (response) {
+          const { message } = response.data as { statusCode: string; message: string };
+          return rejectWithValue(message || error.message);
+        } else if (request) {
+          return rejectWithValue(request.statusText || error.message);
+        } else {
+          return rejectWithValue(error.message);
+        }
+      }
+    }
+  }
+);
+
+export const fetchBoardById = createAsyncThunk(
+  'boards/getBoardById',
+  async (id: string, { rejectWithValue }) => {
+    try {
+      const { data } = await BoardsService.getBoardById(id);
       return data;
     } catch (error) {
       if (axios.isAxiosError(error)) {
@@ -41,7 +63,7 @@ export const fetchCreateBoard = createAsyncThunk(
   'boards/createBoard',
   async ({ title, description }: { title: string; description: string }, { rejectWithValue }) => {
     try {
-      const { data } = await BoardService.createBoard(title, description);
+      const { data } = await BoardsService.createBoard(title, description);
       return data;
     } catch (error) {
       if (axios.isAxiosError(error)) {
@@ -63,7 +85,7 @@ export const fetchUpdateBoard = createAsyncThunk(
   'boards/updateBoard',
   async ({ id, title, description }: Board, { rejectWithValue }) => {
     try {
-      const { data } = await BoardService.updateBoard(id, title, description);
+      const { data } = await BoardsService.updateBoard(id, title, description);
       return data;
     } catch (error) {
       if (axios.isAxiosError(error)) {
@@ -85,7 +107,7 @@ export const fetchDeleteBoard = createAsyncThunk(
   'boards/deleteBoard',
   async (id: string, { rejectWithValue }) => {
     try {
-      await BoardService.deleteBoard(id);
+      await BoardsService.deleteBoard(id);
       return id;
     } catch (error) {
       if (axios.isAxiosError(error)) {
