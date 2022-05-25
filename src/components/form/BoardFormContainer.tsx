@@ -1,6 +1,6 @@
 import { useForm } from 'react-hook-form';
 import { BoardInfo } from '../../types/types';
-import Button from '../button/Button';
+import Button, { ButtonStyle } from '../button/Button';
 import ButtonGroup from '../button/ButtonGroup';
 import CustomInput from '../custom-form-components/custom-input/CustomInput';
 import CustomTextArea from '../custom-form-components/custom-text-aria/CustomTextArea';
@@ -28,6 +28,7 @@ export default function BoardFormContainer({
     handleSubmit,
     formState: { errors },
     clearErrors,
+    reset,
   } = useForm<BoardInfo>({
     mode: 'onSubmit',
     reValidateMode: 'onSubmit',
@@ -39,6 +40,7 @@ export default function BoardFormContainer({
     if (title != boardData.title || description !== boardData.description) {
       confirmAction({ title, description });
     } else cancelAction();
+    reset();
   };
 
   const onChange = ({ target }: { target: HTMLInputElement }) => {
@@ -69,8 +71,13 @@ export default function BoardFormContainer({
       />
 
       <ButtonGroup>
-        <Button type="submit" text="Confirm" colour="green" />
-        <Button type="button" text="Cancel" colour="gray" onClick={cancelAction} />
+        <Button type="submit" text="Confirm" style={ButtonStyle.confirm_green} />
+        <Button
+          type="button"
+          text="Cancel"
+          style={ButtonStyle.cancel_gray}
+          onClick={cancelAction}
+        />
       </ButtonGroup>
     </Form>
   );

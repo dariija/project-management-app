@@ -1,6 +1,6 @@
 import { useForm } from 'react-hook-form';
 import SignupForm from './SignupForm';
-import CustomInput from '../../custom-input/CustomInput';
+import CustomInput from '../../custom-form-components/custom-input/CustomInput';
 import { useAppDispatch, useAppSelector } from '../../../store/hooks/hooks';
 import { clearUserAuthError, fetchSignupUser } from '../../../store/reducers/userSlice';
 import Loader from '../../loader/Loader';
@@ -17,6 +17,7 @@ export default function SignupFormContainer() {
     handleSubmit,
     formState: { errors },
     clearErrors,
+    reset,
   } = useForm<SignupFormInput>({
     mode: 'onSubmit',
     reValidateMode: 'onSubmit',
@@ -30,6 +31,7 @@ export default function SignupFormContainer() {
 
   const onSubmit = ({ name, login, password }: SignupFormInput) => {
     dispatch(fetchSignupUser({ name, login, password }));
+    reset();
   };
 
   const onChange = ({ target }: { target: HTMLInputElement }) => {

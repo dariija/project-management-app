@@ -1,7 +1,7 @@
 import { useForm } from 'react-hook-form';
 import { useAppDispatch, useAppSelector } from '../../../store/hooks/hooks';
 import { clearUserAuthError, fetchSigninUser } from '../../../store/reducers/userSlice';
-import CustomInput from '../../custom-input/CustomInput';
+import CustomInput from '../../custom-form-components/custom-input/CustomInput';
 import Loader from '../../loader/Loader';
 import SigninForm from '../signin/SigninForm';
 import Notification from '../../notification/Notification';
@@ -17,6 +17,7 @@ export default function SigninFormContainer() {
     handleSubmit,
     formState: { errors },
     clearErrors,
+    reset,
   } = useForm<SigninFormInput>({
     mode: 'onSubmit',
     reValidateMode: 'onSubmit',
@@ -29,6 +30,7 @@ export default function SigninFormContainer() {
 
   const onSubmit = ({ login, password }: SigninFormInput) => {
     dispatch(fetchSigninUser({ login, password }));
+    reset();
   };
 
   const onChange = ({ target }: { target: HTMLInputElement }) => {
