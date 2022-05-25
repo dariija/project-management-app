@@ -1,0 +1,28 @@
+.details_board {
+    width: 30%;
+    min-width: 400px;
+    height: 100%;
+
+    position: absolute;
+    top: 0;
+    left: 100%;
+    padding: 20px;
+
+    box-shadow: rgb(0 0 0 / 25%) 0 0 10px;
+    background-color: rgb(251, 250, 248);
+    z-index: 100;
+    transition: transform 0.4s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.details_board.show_board {
+    transform: translateX(-100%);
+}
+
+.task_details_board_inner {
+    position: relative;
+    padding-right: 60px;
+    gap: 80px;
+    display: flex;
+    flex-direction: column;
+}
+
