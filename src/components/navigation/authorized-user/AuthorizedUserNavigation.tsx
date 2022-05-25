@@ -1,7 +1,7 @@
 import { useLocation } from 'react-router';
 import { useAppDispatch } from '../../../store/hooks/hooks';
 import { signoutUser } from '../../../store/reducers/userSlice';
-import Button from '../../button/Button';
+import Button, { ButtonStyle } from '../../button/Button';
 import LinkButton from '../../link/LinkButton';
 import SelectLanguageContainer from '../../select/SelectLanguageContainer';
 import NavigationItemsGroup from '../NavigationItemsGroup';
@@ -18,7 +18,12 @@ export default function AuthorizedUserNavigation() {
       ) : (
         <>
           <LinkButton path="/profile" text="Profile" />
-          <Button type="button" text="Sign Out" onClick={() => dispatch(signoutUser())} />
+          <Button
+            type="button"
+            text="Sign Out"
+            style={ButtonStyle.cancel_gray}
+            onClick={() => dispatch(signoutUser())}
+          />
         </>
       )}
     </NavigationItemsGroup>

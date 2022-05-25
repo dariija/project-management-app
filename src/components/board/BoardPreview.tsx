@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import styles from './BoardPreview.module.css';
 import kanban from '../../assets/svg/kanban.svg';
 import { Board } from '../../types/types';
+import Button, { ButtonStyle } from '../button/Button';
 
 type Props = Board & {
   editBoard: (e: React.MouseEvent) => void;
@@ -16,8 +17,8 @@ export default function BoardPreview({ id, title, description, editBoard, delete
           <div className={styles.board_header}>
             <h3>{title}</h3>
             <div className={styles.buttons_group}>
-              <button className={styles.edit_board} onClick={editBoard} />
-              <button className={styles.delete_board} onClick={(e) => deleteBoard(e, id)} />
+              <Button type="button" style={ButtonStyle.edit} onClick={editBoard} />
+              <Button type="button" style={ButtonStyle.bin} onClick={(e) => deleteBoard(e, id)} />
             </div>
           </div>
           <div className={styles.board_description}>{description}</div>

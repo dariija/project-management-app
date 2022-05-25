@@ -49,30 +49,6 @@
     align-items: center;
 }
 
-.edit_board,
-.delete_board {
-    width: 20px;
-    height: 20px;
-    padding: 0;
-    border: none;
-    z-index: 10;
-
-    cursor: pointer;
-    transition: 0.2s linear;
-}
-
-.edit_board:hover,
-.delete_board:hover {
-    transform: scale(120%);
-}
-
-.edit_board {
-    background: url('../../assets/svg/edit.svg') no-repeat center center;
-}
-.delete_board {
-    background: url('../../assets/svg/bin.svg') no-repeat center center;
-}
-
 .board_description {
     font-size: 14px;
     overflow-wrap: break-word;
