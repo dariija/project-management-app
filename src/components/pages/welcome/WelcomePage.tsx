@@ -2,7 +2,7 @@ import styles from './WelcomePage.module.css';
 
 export default function WelcomePage() {
   return (
-    <>
+    <div className={styles.welcome}>
       <section className={styles.section}>
         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusamus quis consequatur qui,
         repellendus et sequi ipsa in adipisci asperiores ullam, saepe enim velit quidem sunt neque,
@@ -76,6 +76,6 @@ export default function WelcomePage() {
         incidunt neque, porro iusto magni reprehenderit veritatis officiis ad nesciunt! Sed,
         temporibus alias?
       </section>
-    </>
+    </div>
   );
 }
