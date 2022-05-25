@@ -1,0 +1,25 @@
+.columns {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 15px;
+
+    padding: 10px 20px;
+    overflow: auto;
+    width: 100%;
+}
+
+.columns[data-width='change'] {
+    width: 70%;
+    max-width: calc(100% - 400px);    
+}
+
+.column_wrap {
+    min-width: 280px;
+    max-width: 280px;
+}
+
+.wrap {
+    display: flex;
+    overflow: auto;
+}

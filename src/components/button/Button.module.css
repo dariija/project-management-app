@@ -1,4 +1,6 @@
-.button {
+.confirm_red,
+.confirm_green,
+.cancel_gray {
     width: 100%;
     padding: 10px;
 
@@ -7,14 +9,93 @@
     cursor: pointer;
 }
 
-.red {
+.confirm_red {
     background-color: #f15b5b;
 }
 
-.green {
+.confirm_green {
     background-color: rgb(151, 207, 146);
 }
 
-.gray {
+.cancel_gray {
     background-color: gainsboro;
+}
+
+.edit,
+.bin {
+    width: 20px;
+    height: 20px;
+    padding: 0;
+    border: none;
+    z-index: 10;
+
+    cursor: pointer;
+    transition: 0.2s linear;
+}
+
+.edit:hover,
+.bin:hover {
+    transform: scale(120%);
+}
+
+.edit {
+    background: url('../../assets/svg/edit.svg') no-repeat center center;
+}
+.bin{
+    background: url('../../assets/svg/bin.svg') no-repeat center center;
+}
+
+.delete,
+.delete_by_hover_task {
+    width: 15px;
+    height: 15px;
+    padding: 0;
+
+    background: url('../../assets/svg/close.svg') no-repeat center center;
+    border: none;
+    z-index: 10;
+
+    cursor: pointer;
+    transition: 0.2s linear;
+}
+
+.delete:hover {
+    transform: scale(120%);
+}
+
+.delete_by_hover_task {
+    visibility: hidden;
+    opacity: 0;
+}
+
+[data-task-id]:hover .delete_by_hover_task {
+    visibility: visible;
+    opacity: 1;
+}
+
+.submit_auth_form {
+    width: 100%;
+    padding: 10px 20px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+
+    text-align: center;
+    border: 0;
+    border-radius: 7px;
+    background-color:  #ff8b86;
+    cursor: pointer;
+}
+
+.arrow_back {
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+
+    border: none;
+    background: url('../../assets/svg/arrow.svg') no-repeat center center;
+    z-index: 10;
+    cursor: pointer;
 }

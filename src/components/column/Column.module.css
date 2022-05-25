@@ -1,0 +1,24 @@
+.column {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+
+    background-color: aliceblue;
+    box-shadow: 0px 0px 10px 0px #d2d7e0;
+    box-shadow: rgb(0 0 0 / 10%) 0 0 10px;
+    border-radius: 8px;
+}
+
+.column_title {
+    width: 100%;
+
+    border: 0;
+    border-radius: 7px;
+    resize: none;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.column_title:focus{
+    outline: none;
+}

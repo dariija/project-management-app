@@ -1,0 +1,21 @@
+.add_button {
+    width: 100%;
+    padding: 10px;
+
+    color: rgb(90, 90, 90);
+    background-color: #ffffff59;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.2s linear;
+}
+
+.add_button:hover {
+    color: black;
+    background-color: #ffffffa9;
+}
+
+.plus {
+    font-size: 21px;
+    margin-right: 10px;
+}
