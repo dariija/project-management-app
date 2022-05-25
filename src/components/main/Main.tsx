@@ -5,5 +5,9 @@ type Props = {
 };
 
 export default function Main({ children }: Props) {
-  return <main className={styles.main}>{children}</main>;
+  return (
+    <main id="main" className={styles.main}>
+      {children}
+    </main>
+  );
 }
