@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import ReactDOM from 'react-dom';
 import createRootContainer from '../../utils/createRootContainer';
 import styles from './Notification.module.css';
@@ -8,8 +8,8 @@ type Props = {
 };
 
 export default function Notification({ text }: Props) {
-  const rootContainer = createRootContainer('notification');
-  rootContainer.className = `${styles.test}`;
+  const rootContainer = useRef(createRootContainer('notification')).current;
+  rootContainer.className = `${styles.notification}`;
 
   useEffect(() => {
     rootContainer.addEventListener('transitionend', (e: TransitionEvent) => {
