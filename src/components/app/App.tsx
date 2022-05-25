@@ -5,6 +5,7 @@ import { checkAuth } from '../../store/reducers/userSlice';
 import Footer from '../footer/Footer';
 import HeaderContainer from '../header/HeaderContainer';
 import Main from '../main/Main';
+import BoardPageContainer from '../pages/board/BoardPageContainer';
 import MainPageContainer from '../pages/main/MainPageContainer';
 import SigninPage from '../pages/signin/SigninPage';
 import SignupPage from '../pages/signup/SignupPage';
@@ -30,6 +31,10 @@ function App() {
             <Route path="/signin" element={<PublicRoute component={<SigninPage />} />} />
             <Route path="/signup" element={<PublicRoute component={<SignupPage />} />} />
             <Route path="/main" element={<PrivateRoute component={<MainPageContainer />} />} />
+            <Route
+              path="/board/:id"
+              element={<PrivateRoute component={<BoardPageContainer />} />}
+            />
           </Routes>
         </Main>
         <Footer />
