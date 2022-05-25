@@ -8,6 +8,7 @@ import ModalContainer from '../../modal/ModalContainer';
 import Notification from '../../notification/Notification';
 import BoardsList from '../../boards-list/BoardsList';
 import CreateBoardButton from '../../button/CreateBoardButton';
+import MainPage from './MainPage';
 
 export default function MainPageContainer() {
   const dispatch = useAppDispatch();
@@ -28,7 +29,7 @@ export default function MainPageContainer() {
   };
 
   return (
-    <>
+    <MainPage>
       {isLoading && <Loader />}
       {error && <Notification text={error} />}
 
@@ -43,6 +44,6 @@ export default function MainPageContainer() {
           confirmAction={createBoard}
         />
       </ModalContainer>
-    </>
+    </MainPage>
   );
 }
