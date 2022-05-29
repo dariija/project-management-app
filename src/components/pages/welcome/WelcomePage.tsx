@@ -1,13 +1,11 @@
+import { useTranslation } from 'react-i18next';
 import styles from './WelcomePage.module.css';
 
 export default function WelcomePage() {
+  const { t } = useTranslation();
   return (
     <div className={styles.welcome}>
-      <section className={styles.section}>
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusamus quis consequatur qui,
-        repellendus et sequi ipsa in adipisci asperiores ullam, saepe enim velit quidem sunt neque,
-        libero eius nostrum iure!
-      </section>
+      <section className={styles.section}>{t('lorem')}</section>
       <section className={styles.section}>
         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odit similique, nisi natus iste
         vero provident quidem rem voluptatibus, tenetur, vel pariatur quia ipsam? Possimus, impedit

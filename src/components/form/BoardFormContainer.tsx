@@ -1,4 +1,5 @@
 import { useForm } from 'react-hook-form';
+import { useTranslation } from 'react-i18next';
 import { BoardInfo } from '../../types/types';
 import Button, { ButtonStyle } from '../button/Button';
 import ButtonGroup from '../button/ButtonGroup';
@@ -23,6 +24,8 @@ export default function BoardFormContainer({
   confirmAction,
   formTitle,
 }: Props) {
+  const { t } = useTranslation();
+
   const {
     register,
     handleSubmit,
@@ -57,24 +60,26 @@ export default function BoardFormContainer({
         type="text"
         name="title"
         id="board_title"
-        label="Title"
-        register={{ ...register('title', { onChange, required: 'Provide title' }) }}
+        label={t('title')}
+        register={{ ...register('title', { onChange, required: `${t('provide_title')}` }) }}
         error={errors.title}
       />
 
       <CustomTextArea
         name="description"
         id="board_description"
-        label="Description"
-        register={{ ...register('description', { onChange, required: 'Provide description' }) }}
+        label={t('description')}
+        register={{
+          ...register('description', { onChange, required: `${t('provide_description')}` }),
+        }}
         error={errors.description}
       />
 
       <ButtonGroup>
-        <Button type="submit" text="Confirm" style={ButtonStyle.confirm_green} />
+        <Button type="submit" text={t('confirm')} style={ButtonStyle.confirm_green} />
         <Button
           type="button"
-          text="Cancel"
+          text={t('cancel')}
           style={ButtonStyle.cancel_gray}
           onClick={cancelAction}
         />

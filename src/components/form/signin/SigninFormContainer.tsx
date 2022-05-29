@@ -7,8 +7,10 @@ import SigninForm from '../signin/SigninForm';
 import Notification from '../../notification/Notification';
 import { useEffect } from 'react';
 import { SigninFormInput } from '../../../types/types';
+import { useTranslation } from 'react-i18next';
 
 export default function SigninFormContainer() {
+  const { t } = useTranslation();
   const dispatch = useAppDispatch();
   const { isLoading, error } = useAppSelector((state) => state.user);
 
@@ -54,8 +56,8 @@ export default function SigninFormContainer() {
           type="text"
           name="login"
           id="login"
-          label="Login"
-          register={{ ...register('login', { onChange, required: 'Provide login' }) }}
+          label={t('login')}
+          register={{ ...register('login', { onChange, required: `${t('provide_login')}` }) }}
           error={errors.login}
         />
 
@@ -63,8 +65,8 @@ export default function SigninFormContainer() {
           type="password"
           name="password"
           id="password"
-          label="Password"
-          register={{ ...register('password', { onChange, required: 'Provide password' }) }}
+          label={t('password')}
+          register={{ ...register('password', { onChange, required: `${t('provide_password')}` }) }}
           error={errors.password}
         />
       </SigninForm>

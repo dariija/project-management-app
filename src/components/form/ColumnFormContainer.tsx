@@ -1,4 +1,5 @@
 import { useForm } from 'react-hook-form';
+import { useTranslation } from 'react-i18next';
 import { ColumnInfo } from '../../types/types';
 import Button, { ButtonStyle } from '../button/Button';
 import ButtonGroup from '../button/ButtonGroup';
@@ -13,6 +14,7 @@ type Props = {
 };
 
 export default function ColumnFormContainer({ cancelAction, confirmAction, formTitle }: Props) {
+  const { t } = useTranslation();
   const {
     register,
     handleSubmit,
@@ -45,16 +47,16 @@ export default function ColumnFormContainer({ cancelAction, confirmAction, formT
         type="text"
         name="column-title"
         id="column_title"
-        label="Title"
-        register={{ ...register('title', { onChange, required: 'Provide title' }) }}
+        label={t('title')}
+        register={{ ...register('title', { onChange, required: `${t('provide_title')}` }) }}
         error={errors.title}
       />
 
       <ButtonGroup>
-        <Button type="submit" text="Confirm" style={ButtonStyle.confirm_green} />
+        <Button type="submit" text={t('confirm')} style={ButtonStyle.confirm_green} />
         <Button
           type="button"
-          text="Cancel"
+          text={t('cancel')}
           style={ButtonStyle.cancel_gray}
           onClick={cancelAction}
         />

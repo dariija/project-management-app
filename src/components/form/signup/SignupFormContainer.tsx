@@ -7,8 +7,10 @@ import Loader from '../../loader/Loader';
 import Notification from '../../notification/Notification';
 import { useEffect } from 'react';
 import { SignupFormInput } from '../../../types/types';
+import { useTranslation } from 'react-i18next';
 
 export default function SignupFormContainer() {
+  const { t } = useTranslation();
   const dispatch = useAppDispatch();
   const { isLoading, error } = useAppSelector((state) => state.user);
 
@@ -55,8 +57,8 @@ export default function SignupFormContainer() {
           type="text"
           name="name"
           id="name"
-          label="Name"
-          register={{ ...register('name', { onChange, required: 'Provide name' }) }}
+          label={t('name')}
+          register={{ ...register('name', { onChange, required: `${t('provide_name')}` }) }}
           error={errors.name}
         />
 
@@ -64,8 +66,8 @@ export default function SignupFormContainer() {
           type="text"
           name="login"
           id="login"
-          label="Login"
-          register={{ ...register('login', { onChange, required: 'Provide login' }) }}
+          label={t('login')}
+          register={{ ...register('login', { onChange, required: `${t('provide_login')}` }) }}
           error={errors.login}
         />
 
@@ -73,8 +75,8 @@ export default function SignupFormContainer() {
           type="password"
           name="password"
           id="password"
-          label="Password"
-          register={{ ...register('password', { onChange, required: 'Provide password' }) }}
+          label={t('password')}
+          register={{ ...register('password', { onChange, required: `${t('provide_password')}` }) }}
           error={errors.password}
         />
       </SignupForm>
