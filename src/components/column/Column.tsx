@@ -5,5 +5,9 @@ type Props = {
 };
 
 export default function Column({ children }: Props) {
-  return <div className={styles.column}>{children}</div>;
+  return (
+    <>
+      <div className={styles.column}>{children}</div>
+    </>
+  );
 }

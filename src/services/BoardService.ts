@@ -45,8 +45,8 @@ export default class BoardService {
     boardId,
     columnId,
     ...taskInfo
-  }: TaskInfo): Promise<AxiosResponse<Task>> {
-    return API.post<Task>(`/boards/${boardId}/columns/${columnId}/tasks`, { ...taskInfo });
+  }: TaskInfo): Promise<AxiosResponse<TaskFullData>> {
+    return API.post<TaskFullData>(`/boards/${boardId}/columns/${columnId}/tasks`, { ...taskInfo });
   }
 
   static updateColumnTask({

@@ -1,15 +1,25 @@
-.columns {
+.board_columns_wrap {
     display: flex;
-    flex-direction: row;
     flex-wrap: nowrap;
     gap: 15px;
 
+    width: 100%;
     padding: 10px 20px;
     overflow: auto;
-    width: 100%;
 }
 
-.columns[data-width='change'] {
+.columns {
+    display: flex;
+    flex-direction: row;
+    /* flex-wrap: nowrap; */
+    gap: 15px;
+
+    /* padding: 10px 20px; */
+    /* overflow: auto; */
+    /* width: 100%; */
+}
+
+.board_columns_wrap[data-width='change'] {
     width: 70%;
     max-width: calc(100% - 400px);    
 }

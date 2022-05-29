@@ -1,4 +1,5 @@
 .tasks {
+    min-height: 1px;
     display: flex;
     gap: 7px;
     flex-direction: column;

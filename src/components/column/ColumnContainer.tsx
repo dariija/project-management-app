@@ -63,7 +63,7 @@ export default function ColumnContainer({ id, title, order, tasks }: Props) {
           deleteColumn={showConfirmationModal}
           editColumnTitle={editColumnTitle}
         />
-        <TasksList tasks={tasks}></TasksList>
+        <TasksList tasks={tasks} columnId={id}></TasksList>
         <CreateButton onClick={showCreateTaskModal} text="Add task" />
       </Column>
 
