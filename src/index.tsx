@@ -1,4 +1,4 @@
-import React, { Suspense } from 'react';
+import React from 'react';
 import { createRoot } from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
@@ -8,7 +8,7 @@ import './index.css';
 import { DndProvider } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
 import './i18n/i18n';
-import Loader from './components/loader/Loader';
+import ErrorBoundary from './components/errorBoundary/ErrorBoundary';
 
 const container = document.getElementById('root')!;
 const root = createRoot(container);
@@ -18,9 +18,9 @@ root.render(
     <BrowserRouter>
       <DndProvider backend={HTML5Backend}>
         <Provider store={store}>
-          <Suspense fallback={<Loader />}>
+          <ErrorBoundary>
             <App />
-          </Suspense>
+          </ErrorBoundary>
         </Provider>
       </DndProvider>
     </BrowserRouter>
