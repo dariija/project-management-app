@@ -12,15 +12,19 @@ export default function Notification({ text }: Props) {
   rootContainer.className = `${styles.notification}`;
 
   useEffect(() => {
-    rootContainer.addEventListener('transitionend', (e: TransitionEvent) => {
+    const listener = (e: TransitionEvent) => {
       (e.target as HTMLDivElement).classList.contains(`${styles.show}`)
         ? setTimeout(() => rootContainer.classList.remove(`${styles.show}`), 4000)
         : rootContainer.remove();
-    });
+    };
+    rootContainer.addEventListener('transitionend', listener);
     document.body.append(rootContainer);
     setTimeout(() => rootContainer.classList.add(`${styles.show}`), 50);
 
-    return () => rootContainer.remove();
+    return () => {
+      rootContainer.remove();
+      rootContainer.removeEventListener('transitionend', listener);
+    };
   }, []);
 
   return ReactDOM.createPortal(text, rootContainer);
