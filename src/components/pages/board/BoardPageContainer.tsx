@@ -175,7 +175,7 @@ export default function BoardPageContainer() {
 
   return (
     <DragDropContext onDragEnd={onDragEnd} onDragStart={onDragStart}>
-      {/* {isLoading && <Loader />} */}
+      {isLoading && <Loader />}
       {error && <Notification text={error} />}
 
       {columns && (
