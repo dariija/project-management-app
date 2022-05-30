@@ -11,11 +11,7 @@ export default function WelcomePage() {
       <section className={styles.about}>
         <div className={styles.about_project_card}>
           <div className={styles.about_project_card_title}>{t('task_manager')}</div>
-          <div className={styles.about_project_description}>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deserunt ipsam placeat quis,
-            odit minima amet quos expedita, ducimus quasi nisi maiores cumque harum! Sed, deleniti
-            enim distinctio dicta itaque accusantium?
-          </div>
+          <div className={styles.about_project_description}>{t('project_description')}</div>
           <Link className={styles.btn_link} to={'/signup'}>
             {t('get_started')}
           </Link>

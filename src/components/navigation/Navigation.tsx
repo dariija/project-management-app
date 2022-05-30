@@ -12,7 +12,6 @@ type Props = {
 export default function Navigation({ children }: Props) {
   const isAuth = useAppSelector((state) => state.user.isAuth);
   const location = useLocation();
-  console.log(location.pathname);
   const { t } = useTranslation();
 
   return (
