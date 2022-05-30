@@ -18,15 +18,17 @@ export const EditableTextArea = React.forwardRef(function EditableTextArea(
 
   useEffect(() => {
     if (textAreaRef.current) {
-      textAreaRef.current.style.height = Math.max(textAreaRef.current.scrollHeight, 28) + 'px';
+      textAreaRef.current.style.height = '28px';
+      textAreaRef.current.style.height = `${textAreaRef.current.scrollHeight}px`;
     }
   }, []);
 
   const onChange = function (e: ChangeEvent) {
     const target = e.target as HTMLTextAreaElement;
-    textAreaRef!.current!.style.height = '28px';
-    textAreaRef!.current!.style.height = `${target.scrollHeight}px`;
-
+    if (textAreaRef.current) {
+      textAreaRef.current.style.height = '28px';
+      textAreaRef.current.style.height = `${textAreaRef.current.scrollHeight}px`;
+    }
     if (textAreaRef.current?.value === '') setErrorTrue?.();
     else setErrorFalse?.();
   };
