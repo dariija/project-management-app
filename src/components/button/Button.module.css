@@ -1,6 +1,7 @@
 .confirm_red,
 .confirm_green,
-.cancel_gray {
+.cancel_gray,
+.nav_pink {
     width: 100%;
     padding: 10px;
 
@@ -12,13 +13,32 @@
 .confirm_red {
     background-color: #f15b5b;
 }
+.confirm_red:hover {
+    background-color: rgb(235, 49, 49);
+}
 
 .confirm_green {
     background-color: rgb(151, 207, 146);
 }
+.confirm_green:hover {
+    /* background-color: rgb(162, 229, 156); */
+    background-color: rgb(107, 209, 97);
+
+}
 
 .cancel_gray {
     background-color: gainsboro;
+}
+.cancel_gray:hover {
+    background-color: rgb(172, 172, 172);
+}
+
+.nav_pink {
+    background-color: #fa838c;
+}
+.nav_pink:hover,
+.submit_auth_form:hover {
+    background-color: #ffb0b9;
 }
 
 .edit,
@@ -82,7 +102,7 @@
     text-align: center;
     border: 0;
     border-radius: 7px;
-    background-color:  #ff8b86;
+    background-color: #fa838c;
     cursor: pointer;
 }
 
@@ -98,4 +118,8 @@
     background: url('../../assets/svg/arrow.svg') no-repeat center center;
     z-index: 10;
     cursor: pointer;
+}
+
+.btn {
+    transition: linear 0.2s;
 }

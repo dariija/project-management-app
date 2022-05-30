@@ -1,6 +1,14 @@
 .btn_link {
-    display: inline-block;
+    display: flex;
     padding: 10px;
     background-color: #fa838c;
     border-radius: 5px;   
+    align-items: center;
+    justify-content: center;
+
+    transition: linear 0.2s;
+}
+
+.btn_link:hover {
+    background-color: #ffb0b9;
 }

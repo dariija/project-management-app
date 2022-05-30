@@ -74,7 +74,6 @@ export default function BoardPageContainer() {
             title: spliced.title,
             order: destination.index + 1,
             newColumnsOrder,
-            // order: destination,
           })
         );
         return;

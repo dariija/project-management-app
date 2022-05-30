@@ -22,15 +22,13 @@ export default function TasksList({ tasks, columnId }: Props) {
             return (
               <Draggable key={task.id} draggableId={task.id} index={index}>
                 {(provided, snapshot) => (
-                  <>
-                    <li
-                      ref={provided.innerRef}
-                      {...provided.draggableProps}
-                      {...provided.dragHandleProps}
-                    >
-                      <TaskContainer {...task} key={task.id} />
-                    </li>
-                  </>
+                  <li
+                    ref={provided.innerRef}
+                    {...provided.draggableProps}
+                    {...provided.dragHandleProps}
+                  >
+                    <TaskContainer {...task} key={task.id} />
+                  </li>
                 )}
               </Draggable>
             );

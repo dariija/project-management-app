@@ -26,16 +26,16 @@
 }
 
 .blob_1 {
-    border-radius: 36% 64% 51% 49% / 61% 64% 36% 39% ;
+    border-radius: 65% 35% 55% 45% / 41% 50% 50% 59%;
 }
 
 .blob_2 {
-    border-radius: 35% 65% 66% 34% / 41% 49% 51% 59% ;
+    border-radius: 44% 56% 62% 38% / 43% 49% 51% 57%;
     animation-duration: 5s;
 }
 
 .blob_3 {
-    border-radius: 69% 31% 58% 42% / 63% 52% 48% 37% ;    
+    border-radius: 53% 47% 40% 60% / 43% 39% 61% 57%;
     animation-direction: reverse;
 }
 

@@ -11,6 +11,7 @@ export enum ButtonStyle {
   cancel_gray = 'cancel_gray',
   submit_auth_form = 'submit_auth_form',
   arrow_back = 'arrow_back',
+  nav_pink = 'nav_pink',
 }
 
 type Props = {
@@ -22,7 +23,7 @@ type Props = {
 
 export default function Button({ onClick, type, style, text }: Props) {
   return (
-    <button className={`${styles[style]}`} onClick={onClick} type={type}>
+    <button className={`${styles.btn} ${styles[style]}`} onClick={onClick} type={type}>
       {text}
     </button>
   );

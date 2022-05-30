@@ -5,3 +5,9 @@
     background-color: #ffffff;
     border-radius: 5px;
 }
+
+@media (max-width: 450px) {
+    .form_wrapper {
+        padding: 25px 15px;
+    }
+}

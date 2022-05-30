@@ -1,3 +1,19 @@
+@font-face {
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: 400;
+  src: url("./assets/fonts/Gilroy-Regular.woff2") format("woff2"),
+       url("./assets/fonts/Gilroy-Regular.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: 700;
+  src: url("./assets/fonts/Gilroy-Semibold.woff2") format("woff2"),
+       url("./assets/fonts/Gilroy-Semibold.woff") format("woff");
+}
+
 *,
 *::before,
 *::after {
@@ -9,7 +25,8 @@ html {
 }
 
 body {
-  font-family: 'Roboto', sans-serif;
+  background-image: linear-gradient(to top, #ffbeb5, #ffcbd4, #f9dbea, #f4ebf6, #f9f9f9);
+  font-family: 'Gilroy', sans-serif;
   color: #000000;
 }
 

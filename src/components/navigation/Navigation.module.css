@@ -5,11 +5,17 @@
     align-items: center;
 }
 
-.logo {
-    width: 100px;
-    height: 40px;
-    display: inline-block;
+.link_logo {
+    display: flex;
+}
 
-    background-color: #ff9278;
-    border-radius: 5px; 
+.logo {
+    width: 48px;
+    height: 48px;
+    display: inline-block;
+    background-image: url('../../assets/svg/kanban_logo.svg');
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: 100%;
+    border-radius: 5px;
 }

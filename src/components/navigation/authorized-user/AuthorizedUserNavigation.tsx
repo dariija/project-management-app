@@ -23,7 +23,7 @@ export default function AuthorizedUserNavigation() {
           <Button
             type="button"
             text={t('sign_out')}
-            style={ButtonStyle.cancel_gray}
+            style={ButtonStyle.nav_pink}
             onClick={() => dispatch(signoutUser())}
           />
         </>

@@ -6,7 +6,7 @@
     width: 100vw;
     height: 100vh;
 
-    background-color: rgb(252, 126, 126);
+    background-image: linear-gradient(to top, #ffbeb5, #ffcbd4, #f9dbea, #f4ebf6, #f9f9f9);
     z-index: 10;
 }
 

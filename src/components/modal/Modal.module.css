@@ -10,3 +10,10 @@
     border-radius: 10px;
     box-shadow: 0 16px 40px rgb(0 0 0 / 50%);
 }
+
+
+@media (max-width: 450px) {
+    .modal {
+        min-width: 300px;
+    }
+}

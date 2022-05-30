@@ -8,6 +8,9 @@
     column-gap: 20px;
     padding: 10px;
 
+    width: 410px;
+    height: 120px;
+
     background-color: #f9f8f8;
     border-radius: 8px;
     box-shadow: rgb(0 0 0 / 10%) 0 0 10px;
@@ -25,7 +28,7 @@
     height: auto;
     padding: 10px;
     border-radius: 10px;
-    background-color: rgb(245, 197, 165);
+    background-color: #d4d4d454;
     background-size: 80%;
 }
 
@@ -52,4 +55,14 @@
 .board_description {
     font-size: 14px;
     overflow-wrap: break-word;
+}
+
+@media (max-width: 450px) {
+    .board {
+        width: 280px;
+    }
+
+    .board_img {
+        display: none;
+    }
 }

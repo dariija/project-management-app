@@ -5,6 +5,7 @@
     background-color: transparent;
 
     transition: linear 0.3s;
+    z-index: 8;
 }
 
 .header.scrolled {
