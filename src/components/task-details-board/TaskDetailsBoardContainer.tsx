@@ -22,9 +22,10 @@ export default function TaskDetailsBoardContainer({
 }: Props) {
   const titleRef = useRef<HTMLTextAreaElement>(null);
   const descriptionRef = useRef<HTMLTextAreaElement>(null);
-  const taskDetailsBoard = useRef(document.getElementById('task_details_board')).current;
+  const taskDetailsBoard = document.getElementById('task_details_board');
   const taskDetailsBoardInner = useRef(document.createElement('div')).current;
   taskDetailsBoardInner.classList.add(`${styles.task_details_board_inner}`);
+
   const columns = document.getElementById('columns');
 
   const [isDescriptionEditable, setIsDescriptionEditable] = useState(false);
@@ -32,11 +33,10 @@ export default function TaskDetailsBoardContainer({
 
   const [titleValidationError, setTitleValidationError] = useState(false);
   const [descriptionValidationError, setDescriptionValidationError] = useState(false);
+
   useEffect(() => {
     const click = (e: Event) => {
-      const dataAttr = e
-        .composedPath()
-        .find((el) => (el as HTMLElement).dataset?.taskId) as HTMLElement;
+      const dataAttr = (e.target as HTMLDivElement).dataset.taskId;
 
       if (descriptionValidationError || titleValidationError) {
         e.preventDefault();
@@ -47,11 +47,9 @@ export default function TaskDetailsBoardContainer({
           e.stopPropagation();
         }
 
-        if (dataAttr && dataAttr.dataset.taskId !== id) {
+        if (dataAttr && dataAttr !== id) {
           editTask(titleRef.current?.value || title, descriptionRef.current?.value || description);
           taskDetailsBoardInner.remove();
-        } else if (dataAttr) {
-          return true;
         } else {
           closeBoard();
           taskDetailsBoardInner.remove();
@@ -67,11 +65,13 @@ export default function TaskDetailsBoardContainer({
       }
     };
 
-    if (isOpen && taskDetailsBoard) {
-      taskDetailsBoard.append(taskDetailsBoardInner);
-      openBoard();
-      columns?.addEventListener('click', click);
-      columns?.addEventListener('mousedown', mousedown);
+    if (isOpen) {
+      if (taskDetailsBoard) {
+        taskDetailsBoard.append(taskDetailsBoardInner);
+        openBoard();
+        columns?.addEventListener('click', click);
+        columns?.addEventListener('mousedown', mousedown);
+      }
     } else {
       columns?.removeEventListener('click', click);
       columns?.removeEventListener('mousedown', mousedown);
