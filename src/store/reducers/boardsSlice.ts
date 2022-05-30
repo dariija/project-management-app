@@ -131,10 +131,10 @@ const BoardSlice = createSlice({
   reducers: {},
   extraReducers: {
     // ----- get all boards -------
-    [fetchAllBoards.pending.type]: (state) => {
-      state.isLoading = true;
-      state.error = '';
-    },
+    // [fetchAllBoards.pending.type]: (state) => {
+    //   state.isLoading = true;
+    //   state.error = '';
+    // },
     [fetchAllBoards.fulfilled.type]: (state, action: PayloadAction<[] | Board[]>) => {
       state.isLoading = false;
       state.boards = action.payload;
@@ -144,10 +144,10 @@ const BoardSlice = createSlice({
       state.error = action.payload;
     },
     // ----- create board -------
-    [fetchCreateBoard.pending.type]: (state) => {
-      state.isLoading = true;
-      state.error = '';
-    },
+    // [fetchCreateBoard.pending.type]: (state) => {
+    //   state.isLoading = true;
+    //   state.error = '';
+    // },
     [fetchCreateBoard.fulfilled.type]: (state, action: PayloadAction<Board>) => {
       state.isLoading = false;
       state.boards = [...state.boards, action.payload];
@@ -157,10 +157,10 @@ const BoardSlice = createSlice({
       state.error = action.payload;
     },
     // ----- update board -------
-    [fetchUpdateBoard.pending.type]: (state) => {
-      state.isLoading = true;
-      state.error = '';
-    },
+    // [fetchUpdateBoard.pending.type]: (state) => {
+    //   state.isLoading = true;
+    //   state.error = '';
+    // },
     [fetchUpdateBoard.fulfilled.type]: (state, action: PayloadAction<Board>) => {
       state.isLoading = false;
       const { id, title, description } = action.payload;
@@ -173,10 +173,10 @@ const BoardSlice = createSlice({
       state.error = action.payload;
     },
     // ----- delete board -------
-    [fetchDeleteBoard.pending.type]: (state) => {
-      state.isLoading = true;
-      state.error = '';
-    },
+    // [fetchDeleteBoard.pending.type]: (state) => {
+    //   state.isLoading = true;
+    //   state.error = '';
+    // },
     [fetchDeleteBoard.fulfilled.type]: (state, action: PayloadAction<string>) => {
       state.isLoading = false;
       state.boards = state.boards.filter((board) => board.id !== action.payload);

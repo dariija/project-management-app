@@ -325,10 +325,10 @@ const SelectedBoardSlice = createSlice({
   initialState,
   reducers: {},
   extraReducers: {
-    // [fetchBoardById.pending.type]: (state) => {
-    //   state.isLoading = true;
-    //   state.error = '';
-    // },
+    [fetchBoardById.pending.type]: (state) => {
+      state.isLoading = true;
+      state.error = '';
+    },
     [fetchBoardById.fulfilled.type]: (state, action: PayloadAction<BoardFullData>) => {
       state.isLoading = false;
       state.board = action.payload;
