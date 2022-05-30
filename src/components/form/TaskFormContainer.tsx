@@ -69,7 +69,7 @@ export default function TaskFormContainer({ cancelAction, confirmAction, formTit
       <ButtonGroup>
         <Button type="submit" text={t('confirm')} style={ButtonStyle.confirm_green} />
         <Button
-          type="button"
+          type="reset"
           text={t('cancel')}
           style={ButtonStyle.cancel_gray}
           onClick={cancelAction}

@@ -20,6 +20,7 @@ export default function ColumnFormContainer({ cancelAction, confirmAction, formT
     handleSubmit,
     formState: { errors },
     clearErrors,
+    reset,
   } = useForm<ColumnInfo>({
     mode: 'onSubmit',
     reValidateMode: 'onSubmit',
@@ -31,6 +32,7 @@ export default function ColumnFormContainer({ cancelAction, confirmAction, formT
 
   const onSubmit = ({ title }: { title: string }) => {
     confirmAction(title);
+    reset();
   };
 
   const onChange = ({ target }: { target: HTMLInputElement }) => {
@@ -55,7 +57,7 @@ export default function ColumnFormContainer({ cancelAction, confirmAction, formT
       <ButtonGroup>
         <Button type="submit" text={t('confirm')} style={ButtonStyle.confirm_green} />
         <Button
-          type="button"
+          type="reset"
           text={t('cancel')}
           style={ButtonStyle.cancel_gray}
           onClick={cancelAction}
