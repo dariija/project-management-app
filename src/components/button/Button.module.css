@@ -123,3 +123,11 @@
 .btn {
     transition: linear 0.2s;
 }
+
+
+@media (max-width: 500px) {
+    .btn {
+        padding: 5px;
+    }
+    
+}

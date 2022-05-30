@@ -24,3 +24,22 @@
     margin-bottom: 50px;
     font-size: 32px;
 }
+
+@media (max-width: 500px) {
+    .wrapper  {
+        width: 100%;
+    }
+
+    .oops {
+        font-size: 70px;
+    }
+    
+    .text {
+        font-size: 38px;
+    }
+
+    .error_container {
+        padding: 0 10px;
+        transform: translateY(40px);
+    }
+}

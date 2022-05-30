@@ -12,3 +12,15 @@
 .btn_link:hover {
     background-color: #ffb0b9;
 }
+
+@media (max-width: 500px) {
+    .select {
+        width: 36px;
+        height: 36px;
+    }
+
+    .btn_link {
+        padding: 5px;
+    }
+
+}

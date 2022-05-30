@@ -5,3 +5,10 @@
     border-radius: 5px;   
     cursor: pointer;
 }
+
+@media (max-width: 500px) {
+    .select {
+        padding: 4px;
+    }
+
+}
