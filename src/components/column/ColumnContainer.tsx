@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { useAppDispatch, useAppSelector } from '../../store/hooks/hooks';
 import {
   fetchDeleteColumn,
@@ -17,6 +18,7 @@ import ColumnHeaderContainer from './ColumnHeaderContainer';
 type Props = ColumnFullData;
 
 export default function ColumnContainer({ id, title, order, tasks }: Props) {
+  const { t } = useTranslation();
   const dispatch = useAppDispatch();
   const boardId = useAppSelector((state) => state.selectedBoard.board.id);
   const userId = useAppSelector((state) => state.user.user.id);
@@ -64,7 +66,7 @@ export default function ColumnContainer({ id, title, order, tasks }: Props) {
           editColumnTitle={editColumnTitle}
         />
         <TasksList tasks={tasks} columnId={id}></TasksList>
-        <CreateButton onClick={showCreateTaskModal} text="Add task" />
+        <CreateButton onClick={showCreateTaskModal} text={t('add_task_card')} />
       </Column>
 
       <ModalContainer isOpen={openConfirmationModal}>
@@ -76,7 +78,7 @@ export default function ColumnContainer({ id, title, order, tasks }: Props) {
 
       <ModalContainer isOpen={openCreateTaskModal}>
         <TaskFormContainer
-          formTitle="Create task"
+          formTitle={t('create_task_card')}
           cancelAction={() => setOpenCreateTaskModal(false)}
           confirmAction={createTask}
         />

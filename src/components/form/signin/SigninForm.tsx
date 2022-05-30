@@ -19,7 +19,7 @@ export default function SigninForm({ children, onSubmit }: Props) {
         <Button type="submit" text={t('sign_in')} style={ButtonStyle.submit_auth_form} />
       </form>
       <hr></hr>
-      <Link to="/signup">Don&apos;t have account yet? Register</Link>
+      <Link to="/signup">{t('no_account')}</Link>
     </div>
   );
 }

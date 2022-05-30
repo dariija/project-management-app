@@ -4,6 +4,7 @@ import Button, { ButtonStyle } from '../button/Button';
 import { EditableTextArea } from '../editable-text-area/EditableTextArea';
 import TaskDetailsBoardItem from './TaskDetailsBoardItem';
 import styles from './TaskDetailsBoard.module.css';
+import { t } from 'i18next';
 
 type Props = {
   isOpen: boolean;
@@ -116,7 +117,7 @@ export default function TaskDetailsBoardContainer({
     ? ReactDOM.createPortal(
         <>
           <Button onClick={closeBoardEvent} type="button" style={ButtonStyle.arrow_back} />
-          <TaskDetailsBoardItem error={titleValidationError} errorText="Provide title!">
+          <TaskDetailsBoardItem error={titleValidationError} errorText={t('provide_title')}>
             <EditableTextArea
               text={title}
               ref={titleRef}
@@ -130,8 +131,8 @@ export default function TaskDetailsBoardContainer({
 
           <TaskDetailsBoardItem
             error={descriptionValidationError}
-            errorText="Provide description!"
-            labelText="Description"
+            errorText={t('provide_description')}
+            labelText={t('description')}
           >
             <EditableTextArea
               text={description}

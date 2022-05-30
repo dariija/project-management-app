@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { useAppDispatch } from '../../store/hooks/hooks';
 import { fetchUpdateBoard, fetchDeleteBoard } from '../../store/reducers/boardsSlice';
 import { Board, BoardInfo } from '../../types/types';
@@ -10,6 +11,7 @@ import BoardPreview from './BoardPreview';
 type Props = Board;
 
 export default function BoardPreviewContainer({ id, title, description }: Props) {
+  const { t } = useTranslation();
   const dispatch = useAppDispatch();
 
   const [openConfirmationModal, setOpenConfirmationModal] = useState(false);
@@ -55,7 +57,7 @@ export default function BoardPreviewContainer({ id, title, description }: Props)
           cancelAction={() => setOpenEditBoardModal(false)}
           confirmAction={editBoard}
           boardData={{ title, description }}
-          formTitle="Edit board"
+          formTitle={t('edit_board')}
         />
       </ModalContainer>
     </>

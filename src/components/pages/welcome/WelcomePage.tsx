@@ -10,14 +10,14 @@ export default function WelcomePage() {
     <div className={styles.welcome}>
       <section className={styles.about}>
         <div className={styles.about_project_card}>
-          <div className={styles.about_project_card_title}>Task Manager</div>
+          <div className={styles.about_project_card_title}>{t('task_manager')}</div>
           <div className={styles.about_project_description}>
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deserunt ipsam placeat quis,
             odit minima amet quos expedita, ducimus quasi nisi maiores cumque harum! Sed, deleniti
             enim distinctio dicta itaque accusantium?
           </div>
           <Link className={styles.btn_link} to={'/signup'}>
-            {'Get started'.toUpperCase()}
+            {t('get_started')}
           </Link>
         </div>
         <div className={styles.photo_project}></div>
@@ -26,8 +26,8 @@ export default function WelcomePage() {
         <div className={styles.photo_author}></div>
         <div className={styles.about_author}>
           <div className={styles.about_author_header}>
-            <p className={styles.about_author_hello}>Hello!</p>
-            <p className={styles.about_author_name}>I&apos;m Dasha</p>
+            <p className={styles.about_author_hello}>{t('hello')}</p>
+            <p className={styles.about_author_name}>{t('i_am')}</p>
           </div>
           <div className={styles.about_author_contacts}>
             <ul className={styles.contacts_list}>

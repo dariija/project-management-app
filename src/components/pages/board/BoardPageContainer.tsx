@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { DragDropContext, DropResult } from 'react-beautiful-dnd';
+import { useTranslation } from 'react-i18next';
 import { useParams } from 'react-router';
 import { DragItemsType } from "../../../drag'n'drop/dragTypes";
 import { useAppDispatch, useAppSelector } from '../../../store/hooks/hooks';
@@ -14,12 +15,13 @@ import { ColumnFullData, TaskFullData } from '../../../types/types';
 import CreateButton from '../../button/CreateButton';
 import ColumnsList from '../../columns-list/ColumnsList';
 import ColumnFormContainer from '../../form/ColumnFormContainer';
-// import Loader from '../../loader/Loader';
+import Loader from '../../loader/Loader';
 import ModalContainer from '../../modal/ModalContainer';
 import Notification from '../../notification/Notification';
 import TaskDetailsBoard from '../../task-details-board/TaskDetailsBoard';
 
 export default function BoardPageContainer() {
+  const { t } = useTranslation();
   const params = useParams();
   const dispatch = useAppDispatch();
   const columnsArr = useAppSelector((state) => state.selectedBoard.board.columns);
@@ -179,9 +181,8 @@ export default function BoardPageContainer() {
       {columns && (
         <>
           <ColumnsList columns={columns}>
-            <CreateButton onClick={showCreateColumnModal} text="Add column" />
+            <CreateButton onClick={showCreateColumnModal} text={t('add_column')} />
           </ColumnsList>
-          {/* <CreateButton onClick={showCreateColumnModal} text="Add column" /> */}
         </>
       )}
 
@@ -189,7 +190,7 @@ export default function BoardPageContainer() {
 
       <ModalContainer isOpen={openCreateColumnModal}>
         <ColumnFormContainer
-          formTitle="Create Column"
+          formTitle={t('add_column')}
           cancelAction={() => setOpenCreateColumnModal(false)}
           confirmAction={createColumn}
         />
