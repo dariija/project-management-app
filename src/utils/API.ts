@@ -23,5 +23,6 @@ API.interceptors.response.use(
   },
   async (error) => {
     if (error.response.data.statusCode === 401) store.dispatch(signoutUser());
+    return Promise.reject(error);
   }
 );
