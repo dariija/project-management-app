@@ -1,0 +1,45 @@
+.wrapper {
+    margin: 0 auto;
+}
+
+.error_container {
+    padding: 0 50px;
+    margin: 0 auto;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+
+    text-align: center;
+    transform: translateY(200px);
+}
+
+.oops {
+    font-size: 120px;
+}
+
+.text {
+    margin-bottom: 50px;
+    font-size: 32px;
+}
+
+@media (max-width: 500px) {
+    .wrapper  {
+        width: 100%;
+    }
+
+    .oops {
+        font-size: 70px;
+    }
+    
+    .text {
+        font-size: 38px;
+    }
+
+    .error_container {
+        padding: 0 10px;
+        transform: translateY(40px);
+    }
+}

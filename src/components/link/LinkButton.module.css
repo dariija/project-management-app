@@ -1,0 +1,26 @@
+.btn_link {
+    display: flex;
+    padding: 10px;
+    background-color: #fa838c;
+    border-radius: 5px;   
+    align-items: center;
+    justify-content: center;
+
+    transition: linear 0.2s;
+}
+
+.btn_link:hover {
+    background-color: #ffb0b9;
+}
+
+@media (max-width: 500px) {
+    .select {
+        width: 36px;
+        height: 36px;
+    }
+
+    .btn_link {
+        padding: 5px;
+    }
+
+}

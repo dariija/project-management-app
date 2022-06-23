@@ -1,0 +1,221 @@
+.welcome {
+    padding: 0 20px;
+    width: 100%;
+}
+
+.about {
+    height: calc(100vh - 80px);
+    padding: 50px 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.photo_project {
+    width: 60%;
+    height: 100%;
+    background-image: url('./../../../assets/svg/main_kanban.svg');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.photo_author {
+    width: 50%;
+    height: 100%;
+    background-image: url('./../../../assets/svg/author.svg');
+    background-size: 80%;
+    background-repeat: no-repeat;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.about_project_card {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.about_project_card_title {
+    font-size: 80px;
+    width: 85%;
+}
+
+.about_project_description {
+    font-size: 24px;
+}
+
+.about_project_link {
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 1px;
+    width: 40%;
+
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 1px;
+    width: 40%;
+    display: inline-block;
+    padding: 15px 20px;
+    border-radius: 5px;
+    border: none;
+}
+
+.author {
+    height: calc(100vh - 140px);
+    padding: 50px 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.contacts_list {
+    display: flex;
+    flex-direction: column;
+    font-weight: bold;
+}
+
+.contacts_item {
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+}
+
+.contacts_icon_git,
+.contacts_icon_mail  {
+    width: 35px;
+    max-width: 100%;
+    height: auto;
+    margin-right: 15px;
+    display: block;
+}
+
+.contacts_link {
+    text-decoration: none;
+}
+
+.btn_link {
+    width: 40%;
+    padding: 20px;
+    background-color: #fa838c;
+    border-radius: 5px;   
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    transition: linear 0.2s;
+}
+
+.btn_link:hover {
+    background-color: #ffb0b9;
+}
+
+.about_author {
+    width: 30%;
+    gap: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.about_author_hello {
+    font-size: 120px;
+}
+.about_author_name {
+    font-size: 50px;
+}
+
+
+@media (max-width: 1350px) {
+    .about_project_card_title {
+        font-size: 60px;
+    }
+    
+    .about_project_description {
+        font-size: 18px;
+    }
+
+    .about_author_hello {
+        font-size: 96px;
+    }
+
+    .about_author_name {
+        font-size: 40px;
+    }
+}
+
+
+
+@media (max-width: 1024px) {
+    .about,
+    .author {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .photo_project,
+    .photo_author {
+        width: 85%;
+    }
+
+    .about_project_card {
+        width: 60%;
+        text-align: center;
+        align-items: center;
+    }
+
+    .about_project_card_title,
+    .about_project_description,
+    .about_author_contacts  {
+        width: 100%;
+    }
+
+    .about_author {
+        width: 100%;
+        align-items: center;
+        text-align: center;    
+    }
+
+    .contacts_list {
+        flex-direction: row;
+        justify-content: center;
+        gap: 40px;
+    }
+
+}
+
+
+@media (max-width: 500px) {
+    .about_project_card_title {
+        font-size: 40px;
+    }
+
+    .about_project_card {
+        width: 100%;
+    }
+
+    .photo_project,
+    .about_author_header,
+    .photo_author {
+        display: none;
+    }
+
+    .contacts_list {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .about,
+    .author {
+        height: auto;
+    }
+
+    .contacts_item {
+        justify-content: center;
+    }
+}
+
+

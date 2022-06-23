@@ -1,0 +1,21 @@
+.signup_form {
+    min-width: 350px;
+    padding: 25px 40px;
+
+    box-shadow: rgba(0, 0, 0, 0.1) 0 0 10px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.form_title {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+@media (max-width: 450px) {
+    .signup_form {
+        min-width: 300px;
+    }
+}
+

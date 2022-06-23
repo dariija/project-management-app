@@ -1,0 +1,43 @@
+.column,
+.column_dragging {
+    max-height: 100%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+
+    background-color: #f9f7fa;
+    box-shadow: 0px 0px 10px 0px #d2d7e0;
+    box-shadow: rgb(0 0 0 / 10%) 0 0 10px;
+    border-radius: 8px;
+
+    opacity: 1;
+}
+
+.column_dragging {
+    opacity: 0.5;
+    cursor: grabbing;
+}
+
+.dragging_container,
+.container {
+    opacity: 1;
+    position: relative;
+}
+
+.dragging_container {
+    opacity: 0.5;
+}
+
+.column_title {
+    width: 100%;
+
+    border: 0;
+    border-radius: 7px;
+    resize: none;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.column_title:focus{
+    outline: none;
+}

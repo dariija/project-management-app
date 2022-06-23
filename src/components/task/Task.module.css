@@ -1,0 +1,25 @@
+.task_card,
+.task_card_selected {
+    padding: 10px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+    border-radius: 5px;
+    box-shadow: 0 1px 0 #091e4240;
+    box-shadow: rgb(0 0 0 / 10%) 0 0 8px;
+    background-color: white;
+    cursor: pointer;
+}
+
+.task_card_selected {
+    outline: 1px #0000003d solid;
+    box-shadow: rgb(0 0 0 / 25%) 0 0 10px;
+}
+
+.task_title {
+    max-width: 200px;
+    overflow-wrap: break-word;
+    word-break: break-word;
+}

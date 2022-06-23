@@ -1,0 +1,13 @@
+.form_wrapper {
+    padding: 25px 40px;
+
+    box-shadow: rgba(0, 0, 0, 0.1) 0 0 10px;
+    background-color: #ffffff;
+    border-radius: 5px;
+}
+
+@media (max-width: 450px) {
+    .form_wrapper {
+        padding: 25px 15px;
+    }
+}

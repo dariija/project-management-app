@@ -1,0 +1,26 @@
+.create_button {
+    width: 410px;
+    height: 120px;
+    padding: 10px;
+
+    background: url('../../assets/svg/plus.svg') no-repeat center;
+    background-size: 10%;
+    background-position: 50% 50%;
+    border-radius: 10px;
+    border: #00000063 dotted 2px;
+    box-shadow: rgb(0 0 0 / 10%) 0 0 10px;
+
+    cursor: pointer;
+    transition: 0.2s linear;
+}
+
+.create_button:hover {
+    background-color: #ffffff4a;
+    border-color: #333333;
+}
+
+@media (max-width: 450px) {
+    .create_button {
+        width: 280px;
+    }
+}

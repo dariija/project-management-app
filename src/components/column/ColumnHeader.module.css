@@ -1,0 +1,7 @@
+.column_header {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 0 10px;
+    gap: 15px;
+    margin-bottom: 15px;
+}
