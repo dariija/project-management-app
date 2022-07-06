@@ -12,13 +12,11 @@
 A project management system is an application that helps an individual in a team or group of developers achieve their goals.
 
 ## Used technologies
-- HTML5/CSS3
 - TypeScript
-- React/React Hooks
+- React
 - Redux/RTK
 - React Router DOM
 - React Hook Form
 - React Beautiful DnD
 - Axios
 - i18next
-- Webpack
